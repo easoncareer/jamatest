@@ -3,7 +3,7 @@
 Write a terminal script (in bash, batch, python, ruby, etc) for either a windows or linux terminal that will: 
  1. Loop through a directory of files 
  2. Check if each file contains the word “contour” 
- 3. Replace each occurrence of that word with “jama”
+ 3. Replace each occurrence of that word with “contour”
 
 
 ### How to
