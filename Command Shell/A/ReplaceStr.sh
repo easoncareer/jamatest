@@ -1,6 +1,7 @@
 #!/bin/bash
 OLD="contour"
 NEW="jama"
+
 DPATH="`pwd -P`"
 TFILE="/tmp/out.tmp.$$"
 SCRIPTPATH="$DPATH/$(basename $BASH_SOURCE)"
