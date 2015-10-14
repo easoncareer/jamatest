@@ -8,7 +8,7 @@ Write a terminal script (in bash, batch, python, ruby, etc) for either a windows
 
 ### How to
 
- 1. Place the script file ReplaceStr.sh in any directory.
+ 1. Place the script file [ReplaceStr.sh] in any directory.
  2. Go to the directory in Terminal/Shell and run `bash ReplaceStr.sh`
 
 ### Notes

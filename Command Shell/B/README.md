@@ -5,7 +5,7 @@ Write a terminal script that will copy files containing the word “log” to a 
 
 ### How to
 
- 1. Place the script file Copy2Remote.sh in any directory.
+ 1. Place the script file [Copy2Remote.sh] in any directory.
  2. Go to the directory in Terminal/Shell and run `bash Copy2Remote.sh`
 
 ### Notes
