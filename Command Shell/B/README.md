@@ -1,4 +1,4 @@
-## Command Shell Test B. 
+## Command Shell Test B
 
 Write a terminal script that will copy files containing the word “log” to a remote machine called portland05.
 
@@ -6,7 +6,15 @@ Write a terminal script that will copy files containing the word “log” to a 
 ### How to
 
  1. Place the script file [Copy2Remote.sh](https://github.com/easoncareer/jamatest/blob/master/Command%20Shell/B/Copy2Remote.sh) in any directory.
- 2. Go to the directory in Terminal/Shell and run `bash Copy2Remote.sh`
+ 2. Edit [Copy2Remote.sh](https://github.com/easoncareer/jamatest/blob/master/Command%20Shell/B/Copy2Remote.sh) and give valid value for the below variables:
+    
+    ```
+    REMOTE_PATH="remote/directory/"
+    REMOTE_SERVERIP="portland05"
+    REMOTE_USER="remote_user"
+    ```
+      Make sure the local system does have access to the remote system and the user does have write access to the remote directory
+ 3. Go to the directory in Terminal/Shell and run `bash Copy2Remote.sh`
 
 ### Notes
 
