@@ -14,11 +14,13 @@ Write a terminal script that will copy files containing the word “log” to a 
     REMOTE_USER="remote_user"
     ```
       Make sure the local system does have access to the remote system and the user does have write access to the remote directory
- 3. Go to the directory in Terminal/Shell and run `bash Copy2Remote.sh`
+ 3. Go to the directory in Terminal/Shell and run 
+ 	- `bash Copy2Remote.sh` if want to copy files with "log" in file **NAME**
+ 	- `bash Copy2Remote.sh content` if want to copy files with "log" in file **CONTENT**
 
 ### Notes
 
  - Script will search all files in the directory and go deeper if any subdirectories
  - Assuming "log" is case insensitive
- - Assuming find "log" in file name, not file content.
+ - Assuming find "log" in file name, script will find "log" in file name by default.
  - Assuming local system does have access to remote server/directory via ssh
