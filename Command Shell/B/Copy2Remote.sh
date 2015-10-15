@@ -1,7 +1,7 @@
 #!/bin/bash
-REMOTE_PATH="Eason/Log/"
-REMOTE_SERVERIP="gw.ops.cedexis.com"
-REMOTE_USER="manager"
+REMOTE_PATH="remote/directory/"
+REMOTE_SERVERIP="portland05"
+REMOTE_USER="remote_user"
 
 PATERN="log"
 DPATH="`pwd -P`"
