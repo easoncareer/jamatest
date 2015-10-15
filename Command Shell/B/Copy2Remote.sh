@@ -1,9 +1,9 @@
 #!/bin/bash
-REMOTE_PATH="remote/directory/"
-REMOTE_SERVERIP="portland05"
-REMOTE_USER="root"
+REMOTE_PATH="Eason/Log/"
+REMOTE_SERVERIP="gw.ops.cedexis.com"
+REMOTE_USER="manager"
 
-PATERN="Log"
+PATERN="log"
 DPATH="`pwd -P`"
 SCRIPTPATH="$DPATH/$(basename $BASH_SOURCE)"
 DATE=`date +%F_%T`
@@ -27,7 +27,7 @@ getfile ()
 				getfile "$fpath"
 			else
 				flow="`tr '[:upper:]' '[:lower:]' <<< $f`"
-				if [[ "$flow" == *"log"* ]]; then
+				if [[ "$flow" == *"$PATERN"* ]]; then
 					if [ -f "$fpath" -a -r "$fpath" ]; then
 						sendfile "$fpath"
 					else
@@ -40,3 +40,4 @@ getfile ()
 }
 
 getfile "$DPATH"
+echo "Files with \"$PATERN\" were copied to remote directory $REMOTE_PATH$DATE on $REMOTE_SERVERIP"
