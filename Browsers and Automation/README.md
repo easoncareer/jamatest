@@ -14,5 +14,5 @@ Write a basic automated script that will perform the following steps. You may us
 
 ### Notes
 
- - Browser: [Firefox](http://www.mozilla.org/firefox/)
+ - [Firefox](http://www.mozilla.org/firefox/) need to be installed in order to run the test
  - [Python](https://www.python.org/) need to be installed in order to run the test
