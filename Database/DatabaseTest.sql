@@ -39,32 +39,30 @@
 	UPDATE ClientFeatures
 	SET ClientFeatures.FeatureId = FeaturesNewID.NewID
 	FROM ClientFeatures
-	  LEFT OUTER JOIN
-	  (
-	    SELECT Features.FeatureId , 
-	           Features.FeatureName,
-	           KeepRows.FeatureId as NewID,
-	    FROM Features
-	      LEFT OUTER JOIN (
-	         SELECT MIN(FeatureId) as FeatureId, FeatureName
-	         FROM Features 
-	         GROUP BY FeatureName
-	      ) as KeepRows 
-	        ON MyTable.FeatureName = KeepRows.FeatureName
-	    WHERE
-	      KeepRows.FeatureId IS NULL
-	  ) as FeaturesNewID
-	  	ON ClientFeatures.FeatureId = FeaturesNewID.FeatureId
+		LEFT OUTER JOIN
+		(
+			SELECT Features.FeatureId , 
+				   Features.FeatureName,
+				   KeepRows.FeatureId as NewID,
+			FROM Features
+				LEFT OUTER JOIN (
+					SELECT MIN(FeatureId) as FeatureId, FeatureName
+					FROM Features 
+					GROUP BY FeatureName
+				) as KeepRows 
+					ON MyTable.FeatureName = KeepRows.FeatureName
+			WHERE KeepRows.FeatureId IS NULL
+		) as FeaturesNewID
+			ON ClientFeatures.FeatureId = FeaturesNewID.FeatureId
 	WHERE FeaturesNewID.FeatureId <> FeaturesNewID.NewID
 
 	-- 2. Remove duplicates in Features
 	DELETE Features 
 	FROM Features
-	  LEFT OUTER JOIN (
-	     SELECT MIN(FeatureId) as FeatureId, FeatureName
-	     FROM Features 
-	     GROUP BY FeatureName
-	  ) as KeepRows 
-	    ON MyTable.FeatureId = KeepRows.FeatureId
-	WHERE
-	   KeepRows.FeatureId IS NULL
+		LEFT OUTER JOIN (
+			SELECT MIN(FeatureId) as FeatureId, FeatureName
+			FROM Features 
+			GROUP BY FeatureName
+		) as KeepRows 
+			ON MyTable.FeatureId = KeepRows.FeatureId
+	WHERE KeepRows.FeatureId IS NULL
