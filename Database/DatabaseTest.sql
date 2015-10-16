@@ -1,3 +1,5 @@
+-- All queries written here may have issues since there is no database I could test the script with.
+
 -- A. Write a query that will show the name of all of the clients who are “L” that have a feature called “SpaceshipPlugin”.
 	SELECT Clients.ClientName 
 	FROM ClienFeatures 
@@ -34,7 +36,6 @@
 	WHERE YEAR(Features.FeatureAddedDate) = 2013
 
 -- F. Write a SQL script to find and remove any duplicate FeatureNames
-	-- May have some issue with the queries since there is no database I could test the script with.
 	-- 1. Update FeatureId in ClientFeatures table to avoid and foreign key problem.
 	UPDATE ClientFeatures
 	SET ClientFeatures.FeatureId = FeaturesNewID.NewID
