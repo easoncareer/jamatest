@@ -54,6 +54,8 @@
 	    WHERE
 	      KeepRows.FeatureId IS NULL
 	  ) as FeaturesNewID
+	  	ON ClientFeatures.FeatureId = FeaturesNewID.FeatureId
+	WHERE FeaturesNewID.FeatureId <> FeaturesNewID.NewID
 
 	-- 2. Remove duplicates in Features
 	DELETE Features 
